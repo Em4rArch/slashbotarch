@@ -1,13 +1,19 @@
 const { PermissionsBitField } = require("discord.js");
 const db = require("croxydb")
 module.exports = {
-    name:"kayıtlı-rol",
+    name:"kadın-rol-ayarla",
     description: 'Kayıtlı rol ayarlarsın!',
     type:1,
     options: [
         {
             name:"rol",
             description:"Lütfen bir rol etiketle!",
+            type:8,
+            required:true
+        },
+        {
+            name:"rol2",
+            description:"Lütfen ikinci bir rol etiketle!",
             type:8,
             required:true
         },
@@ -18,8 +24,10 @@ module.exports = {
 
     if(!interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles)) return interaction.reply({content: "Rolleri Yönet Yetkin Yok!", ephemeral: true})
     const rol = interaction.options.getRole('rol')
-    db.set(`kayıtlı_${interaction.guild.id}`, rol.id)
-    interaction.reply({content: "Kayıtlı Rolü Başarıyla <@&"+rol+"> Olarak Ayarlandı."})
+    db.set(`kadın_${interaction.guild.id}`, rol.id)
+    const rol2 = interaction.options.getRole('rol2')
+    db.set(`kadın2_${interaction.guild.id}`, rol2.id)
+    interaction.reply({content: "Kayıtlı Rolü Başarıyla <@&"+rol+"> - <@&"+rol2+"> Olarak Ayarlandı."})
 }
 
 };

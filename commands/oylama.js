@@ -19,7 +19,7 @@ module.exports = {
 
     const oylama = interaction.options.getString('oylaman')
     const embed = new EmbedBuilder()
-    .setTitle("Godzilla - Oylama Sistemi!")
+    .setTitle("Patlıcan - Oylama Sistemi!")
     .setDescription(`Oylama: **${oylama}**`)
     .setColor("Green")
 interaction.channel.send({embeds: [embed]}).then((mesaj) => {

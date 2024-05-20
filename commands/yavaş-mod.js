@@ -1,6 +1,4 @@
 const { Client, EmbedBuilder, PermissionsBitField } = require("discord.js");
-const config = require("../config.json")
-const token = config.token
 module.exports = {
   name: "yavaş-mod",
   description: "Kanalın Yavaş Modunu Ayarlarsın!",
@@ -37,7 +35,7 @@ json: {
 rate_limit_per_user: s
 },
 headers: {
-"Authorization": `Bot ${token}`
+"Authorization": `Bot ${process.env.TOKEN}`
 },
 })
    interaction.reply(`Yazma süre limiti **${s}** saniye olarak ayarlanmıştır.`)
