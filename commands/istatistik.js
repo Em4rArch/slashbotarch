@@ -13,7 +13,7 @@ module.exports = {
     .duration(client.uptime)
     .format(" D [gün], H [saat], m [dakika], s [saniye]");
     const embed = new EmbedBuilder()
-    .addFields({ name: 'Bot Sahibi', value: `Ly3ssia`, inline: false})
+    .addFields({ name: 'Bot Sahibi', value: `fightfordemocracy`, inline: false})
     .addFields({ name: '• Bellek Kullanımı', value: `${(process.memoryUsage().heapUsed /1024 /512).toFixed(2)}MB`, inline: true})
     .addFields({ name: '• Çalışma Süresi', value: `${Uptime}`, inline: true})
     .addFields({ name: '• Kullanıcılar', value: `${client.users.cache.size}`, inline: false})
